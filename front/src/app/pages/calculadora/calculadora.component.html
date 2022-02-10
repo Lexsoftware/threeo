@@ -1,0 +1,30 @@
+<section [formGroup]="formCalculadora">
+    <div class="row">
+        <div class="col-md-1">
+            <input type="number" formControlName="primeiroNumero" class="form-control">
+            <span class="text-danger small"
+                *ngIf="subimited && formCalculadora.controls['primeiroNumero'].errors && formCalculadora.controls['primeiroNumero'].errors['required'] === true">Campo obrigatório</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <input type="number" formControlName="segundoNumero" class="form-control">
+            <span class="text-danger small"
+                *ngIf="subimited && formCalculadora.controls['segundoNumero'].errors && formCalculadora.controls['segundoNumero'].errors['required'] === true">Campo obrigatório</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" class="btn btn-default" (click)="somar()">Somar</button>
+            <button type="button" class="btn btn-default" (click)="dividir()">Dividir</button>
+            <button type="button" class="btn btn-default" (click)="subtrair()">Subtrair</button>
+            <button type="button" class="btn btn-default" (click)="multiplicar()">Multiplicar</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            Resultado: {{resultado}}
+        </div>
+    </div>
+</section>
